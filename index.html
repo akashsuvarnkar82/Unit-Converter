@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter</title>
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    
+    <div class="main">
+        <h1>-Unit Converter-</h1>
+        <h5>-Select Category-</h5>
+        <select id="conversionCategory">
+            <option value="">-select-</option>
+            <option value="temperature">Temperature</option>
+            <option value="area">Area</option>
+            <option value="weight">Weight</option>
+            <option value="length">Length</option>
+            <option value="time">Time</option>
+        </select>
+
+        <div class="container">
+
+            <!-- Temperature Form -->
+            <div class="conversion" id="temperature">
+                <h2>Temperature</h2>
+                <input type="number" id="temperatureInput" placeholder="Enter value">
+                <select id="fromTemperatureUnit">
+                    <option value="celsius">Celsius</option>
+                    <option value="kelvin">Kelvin</option>
+                    <option value="fahrenheit">Fahrenheit</option>
+                </select>
+                <span>to</span>
+                <select id="toTemperatureUnit">
+                    <option value="celsius">Celsius</option>
+                    <option value="kelvin">Kelvin</option>
+                    <option value="fahrenheit">Fahrenheit</option>
+                </select>
+                <button onclick="convertTemperature()">Convert</button>
+                <div class="result">
+                    <p id="temperatureResult">Result will be displayed here</p>
+                </div>
+            </div>            
+
+             <!-- Area Form -->
+             <div class="conversion" id="area">
+                <h2>Area</h2>
+                <input type="number" id="areaInput" placeholder="Enter value">
+                <select id="fromAreaUnit">
+                    <option value="sqMeter">Square Meter</option>
+                    <option value="sqKilometer">Square Kilometer</option>
+                    <option value="sqCentimeter">Square Centimeter</option>
+                    <option value="sqMillimeter">Square Millimeter</option>
+                    <option value="acre">Acre</option>
+                    <option value="hectare">Hectare</option>
+                    <option value="sqMile">Square Mile</option>
+                    <option value="sqYard">Square Yard</option>
+                    <option value="sqFoot">Square Foot</option>
+                    <option value="sqInch">Square Inch</option>
+                </select>
+                <span>to</span>
+                <select id="toAreaUnit">
+                    <option value="sqMeter">Square Meter</option>
+                    <option value="sqKilometer">Square Kilometer</option>
+                    <option value="sqCentimeter">Square Centimeter</option>
+                    <option value="sqMillimeter">Square Millimeter</option>
+                    <option value="acre">Acre</option>
+                    <option value="hectare">Hectare</option>
+                    <option value="sqMile">Square Mile</option>
+                    <option value="sqYard">Square Yard</option>
+                    <option value="sqFoot">Square Foot</option>
+                    <option value="sqInch">Square Inch</option>
+                </select>
+                <button onclick="convertArea()">Convert</button>
+                <div class="result">
+                    <p id="areaResult">Result will be displayed here</p>
+                </div>
+            </div>
+            
+
+            <!-- Weight Form -->
+            <div class="conversion" id="weight">
+                <h2>Weight</h2>
+                <input type="number" id="weightInput" placeholder="Enter value">
+                <select id="fromWeightUnit">
+                    <option value="gram">Gram</option>
+                    <option value="kilogram">Kilogram</option>
+                    <option value="milligram">Milligram</option>
+                    <option value="metricTon">Metric Ton</option>
+                    <option value="longTon">Long Ton</option>
+                    <option value="shortTon">Short Ton</option>
+                    <option value="pound">Pound</option>
+                    <option value="ounce">Ounce</option>
+                    <option value="carrat">Carat</option> <!-- Fixed the typo in "Carat" -->
+                </select>
+                <span>to</span>
+                <select id="toWeightUnit">
+                    <option value="gram">Gram</option>
+                    <option value="kilogram">Kilogram</option>
+                    <option value="milligram">Milligram</option>
+                    <option value="metricTon">Metric Ton</option>
+                    <option value="longTon">Long Ton</option>
+                    <option value="shortTon">Short Ton</option>
+                    <option value="pound">Pound</option>
+                    <option value="ounce">Ounce</option>
+                    <option value="carrat">Carat</option> <!-- Fixed the typo in "Carat" -->
+                </select>
+                <button onclick="convertWeight()">Convert</button>
+                <div class="result">
+                    <p id="weightResult">Result will be displayed here</p>
+                </div>
+            </div>            
+            
+            <!-- Length Form -->
+            <div class="conversion" id="length">
+                <h2>Length</h2>
+                <input type="number" id="lengthInput" placeholder="Enter value">
+                <select id="fromLengthUnit">
+                    <option value="meter">Meter</option>
+                    <option value="kilometer">Kilometer</option>
+                    <option value="centimeter">Centimeter</option>
+                    <option value="millimeter">Millimeter</option>
+                    <option value="mile">Mile</option>
+                    <option value="yard">Yard</option>
+                    <option value="foot">Foot</option>
+                    <option value="inch">Inch</option>
+                </select>
+                <span>to</span>
+                <select id="toLengthUnit">
+                    <option value="meter">Meter</option>
+                    <option value="kilometer">Kilometer</option>
+                    <option value="centimeter">Centimeter</option>
+                    <option value="millimeter">Millimeter</option>
+                    <option value="micrometer">Micrometer</option>
+                    <option value="mile">Mile</option>
+                    <option value="yard">Yard</option>
+                    <option value="foot">Foot</option>
+                    <option value="inch">Inch</option>
+                </select>
+                <button onclick="convertLength()">Convert</button>
+                <div class="result">
+                    <p id="lengthResult">Result will be displayed here</p>
+                </div>
+            </div>
+            
+
+            <!-- Time Form -->
+            <div class="conversion" id="time">
+                <h2>Time</h2>
+                <input type="number" id="timeInput" placeholder="Enter value">
+                <select id="fromTimeUnit">
+                    <option value="second">Second</option>
+                    <option value="millisecond">Millisecond</option>
+                    <option value="minute">Minute</option>
+                    <option value="hour">Hour</option>
+                    <option value="day">Day</option>
+                    <option value="week">Week</option>
+                    <option value="month">Month</option>
+                    <option value="year">Year</option>
+                </select>
+                <span>to</span>
+                <select id="toTimeUnit">
+                    <option value="second">Second</option>
+                    <option value="millisecond">Millisecond</option>
+                    <option value="minute">Minute</option>
+                    <option value="hour">Hour</option>
+                    <option value="day">Day</option>
+                    <option value="week">Week</option>
+                    <option value="month">Month</option>
+                    <option value="year">Year</option>
+                </select>
+                <button onclick="convertTime()">Convert</button>
+                <div class="result">
+                    <p id="timeResult">Result will be displayed here</p>
+                </div>
+
+            </div>
+            
+
+        </div>
+        <div class="name"><h4>Created by Akash</h4></div>
+
+
+    </div>
+
+    <!-- Script JS -->
+    <script src="./script.js"></script>
+</body>
+</html>
